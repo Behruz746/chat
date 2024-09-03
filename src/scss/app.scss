@@ -1,0 +1,347 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// header
+.header {
+  width: 100%;
+  background-color: #1c98f7;
+  padding: 16px 0;
+  box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    width: 130px;
+    height: auto;
+    user-select: none;
+  }
+
+  .button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #ff7a00;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+    &:hover {
+      background-color: #f99231;
+    }
+  }
+}
+
+// login
+.login__section {
+  width: 100%;
+  margin: 200px auto;
+
+  .login__box {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 473px;
+    width: 100%;
+    padding: 35px 0;
+    border-radius: 20px;
+    background-color: #1c98f7;
+    box-shadow: 0px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .login__text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .login__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    transition: transform 0.2s ease-in;
+    img {
+      width: 30px;
+      height: 30px;
+      user-select: none;
+      transition: transform 0.1s ease-in;
+    }
+    &:hover {
+      transform: scale(1.1);
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+// chat
+.chat__section {
+  width: 100%;
+  margin-top: 35px;
+}
+
+.chat__box {
+  padding: 20px 24px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #1c98f7;
+}
+
+.scroll {
+  height: 450px;
+  overflow-y: auto;
+}
+
+.chat__msg {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: auto;
+}
+
+.error__text {
+  margin-top: 150px;
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.chat__form {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  input {
+    padding: 14px 24px;
+    border-radius: 10px;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    font-size: 14px;
+    background-color: #fff;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+  }
+}
+
+// message
+.message__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: start;
+  padding: 0 10px;
+}
+
+.message__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.message__avatar {
+  width: 55px;
+  height: 55px;
+  background-color: #7000ff;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.user__name {
+  color: #fff;
+  font-size: 14px;
+}
+
+.message__data {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  margin-left: 30px;
+  padding: 10px 15px;
+  background-color: #7000ff;
+  border-radius: 10px;
+  position: relative;
+  .triangle {
+    position: absolute;
+    top: -15px;
+    left: -6.5px;
+    transform: rotate(70deg);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Chap tomonda bo'sh joy */
+    border-right: 15px solid #7000ff; /* O'ng tomonda uchburchak */
+    border-top: 10px solid transparent; /* Yuqori tomonda bo'sh joy */
+    border-bottom: 10px solid transparent; /* Pastda bo'sh joy */
+  }
+}
+
+.message__text {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.right {
+  margin-left: auto;
+  align-items: flex-end;
+  .message__user {
+    flex-direction: row-reverse;
+  }
+  .message__data {
+    margin-right: 30px;
+    margin-left: 0px;
+    background-color: #412466;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -5px !important;
+      transform: rotate(110deg);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent; /* Chap tomonda bo'sh joy */
+      border-right: 15px solid #412466; /* O'ng tomonda uchburchak */
+      border-top: 10px solid transparent; /* Yuqori tomonda bo'sh joy */
+      border-bottom: 10px solid transparent; /* Pastda bo'sh joy */
+    }
+  }
+  .triangle {
+    display: none;
+  }
+}
+
+// loader
+.loader__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #2551ff #2551ff transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #ff7a00 #ff7a00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #2551ff #2551ff transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// media
+@media screen and (max-width: 768px) {
+  .chat__section {
+    margin-top: 20px;
+  }
+  .chat__box {
+    padding: 10px 15px;
+  }
+  .message__avatar {
+    width: 44px;
+    height: 44px;
+    img {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  .error__text {
+    font-size: 25px;
+    margin-top: 200px;
+  }
+}
