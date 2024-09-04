@@ -81,7 +81,7 @@ function Chat() {
                 <img
                   width={32}
                   height={32}
-                  src="../../public/send.svg"
+                  src="/send.svg"
                   alt="send icon"
                 />
               </button>
